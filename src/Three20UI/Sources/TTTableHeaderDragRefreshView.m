@@ -111,7 +111,7 @@
 
     UIImage *arrow = TTSTYLEVAR(tableRefreshHeaderArrowImage);
     _arrowImage = [[UIImageView alloc]
-                   initWithFrame:CGRectMake(25.0f, frame.size.height - 65.0f,
+                   initWithFrame:CGRectMake(25.0f, frame.size.height - arrow.size.height - 10,
                                             arrow.size.width, arrow.size.height)];
     _arrowImage.contentMode       = UIViewContentModeScaleAspectFit;
     _arrowImage.image             = arrow;
