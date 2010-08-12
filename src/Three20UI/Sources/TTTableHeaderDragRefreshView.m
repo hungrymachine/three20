@@ -109,11 +109,12 @@
     [self setStatus:TTTableHeaderDragRefreshPullToReload];
     [self addSubview:_statusLabel];
 
+    UIImage *arrow = TTSTYLEVAR(tableRefreshHeaderArrowImage);
     _arrowImage = [[UIImageView alloc]
                    initWithFrame:CGRectMake(25.0f, frame.size.height - 65.0f,
-                                            30.0f, 55.0f)];
+                                            arrow.size.width, arrow.size.height)];
     _arrowImage.contentMode       = UIViewContentModeScaleAspectFit;
-    _arrowImage.image             = TTSTYLEVAR(tableRefreshHeaderArrowImage);
+    _arrowImage.image             = arrow;
     [_arrowImage layer].transform = CATransform3DMakeRotation(M_PI, 0.0f, 0.0f, 1.0f);
     [self addSubview:_arrowImage];
 
