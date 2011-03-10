@@ -6,6 +6,7 @@ Products
 *.perspectivev3
 *.mode1v3
 *.xcworkspace
+*.pyc
 xcuserdata
 .DS_Store
 config
