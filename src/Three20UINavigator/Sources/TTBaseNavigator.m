@@ -101,7 +101,7 @@ __attribute__((weak_import));
   _delegate = nil;
   TT_RELEASE_SAFELY(_window);
   TT_RELEASE_SAFELY(_rootViewController);
-  TT_RELEASE_SAFELY(_popoverController);
+  // TT_RELEASE_SAFELY(_popoverController);
   TT_RELEASE_SAFELY(_delayedControllers);
   TT_RELEASE_SAFELY(_URLMap);
   TT_RELEASE_SAFELY(_persistenceKey);
@@ -331,29 +331,6 @@ __attribute__((weak_import));
                       sourceRect: (CGRect)sourceRect
                         animated: (BOOL)animated {
   TTDASSERT(nil != sourceButton || nil != sourceView);
-  // 
-  // if (nil == sourceButton && nil == sourceView) {
-  //   return;
-  // }
-  // 
-  // if (nil != _popoverController) {
-  //   [_popoverController dismissPopoverAnimated:animated];
-  //   TT_RELEASE_SAFELY(_popoverController);
-  // }
-  // 
-  // _popoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
-  // _popoverController.delegate = self;
-  // if (nil != sourceButton) {
-  //   [_popoverController presentPopoverFromBarButtonItem: sourceButton
-  //                              permittedArrowDirections: UIPopoverArrowDirectionAny
-  //                                              animated: animated];
-  // 
-  // } else {
-  //   [_popoverController presentPopoverFromRect: sourceRect
-  //                                       inView: sourceView
-  //                     permittedArrowDirections: UIPopoverArrowDirectionAny
-  //                                     animated: animated];
-  // }
 }
 
 
