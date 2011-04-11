@@ -331,29 +331,29 @@ __attribute__((weak_import));
                       sourceRect: (CGRect)sourceRect
                         animated: (BOOL)animated {
   TTDASSERT(nil != sourceButton || nil != sourceView);
-
-  if (nil == sourceButton && nil == sourceView) {
-    return;
-  }
-
-  if (nil != _popoverController) {
-    [_popoverController dismissPopoverAnimated:animated];
-    TT_RELEASE_SAFELY(_popoverController);
-  }
-
-  _popoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
-  _popoverController.delegate = self;
-  if (nil != sourceButton) {
-    [_popoverController presentPopoverFromBarButtonItem: sourceButton
-                               permittedArrowDirections: UIPopoverArrowDirectionAny
-                                               animated: animated];
-
-  } else {
-    [_popoverController presentPopoverFromRect: sourceRect
-                                        inView: sourceView
-                      permittedArrowDirections: UIPopoverArrowDirectionAny
-                                      animated: animated];
-  }
+  // 
+  // if (nil == sourceButton && nil == sourceView) {
+  //   return;
+  // }
+  // 
+  // if (nil != _popoverController) {
+  //   [_popoverController dismissPopoverAnimated:animated];
+  //   TT_RELEASE_SAFELY(_popoverController);
+  // }
+  // 
+  // _popoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
+  // _popoverController.delegate = self;
+  // if (nil != sourceButton) {
+  //   [_popoverController presentPopoverFromBarButtonItem: sourceButton
+  //                              permittedArrowDirections: UIPopoverArrowDirectionAny
+  //                                              animated: animated];
+  // 
+  // } else {
+  //   [_popoverController presentPopoverFromRect: sourceRect
+  //                                       inView: sourceView
+  //                     permittedArrowDirections: UIPopoverArrowDirectionAny
+  //                                     animated: animated];
+  // }
 }
 
 
@@ -949,11 +949,11 @@ __attribute__((weak_import));
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
-  if (popoverController == _popoverController) {
-    TT_RELEASE_SAFELY(_popoverController);
-  }
-}
+// - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+//   if (popoverController == _popoverController) {
+//     TT_RELEASE_SAFELY(_popoverController);
+//   }
+// }
 
 
 
